@@ -19,7 +19,7 @@ class ProductController extends Controller
     public function index()
     {
         try {
-            $products = Product::where('id', '>' ,'3')->with('category')->get();
+            $products = Product::where('id', '>' ,'3')->get();
         } catch (\Throwable $th) {
             return response()->json(['error' => $th->getMessage(), 'status' => false]);
         }
